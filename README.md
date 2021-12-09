@@ -5,4 +5,5 @@ Esse repositório trás todas as atividades práticas realizadas no curso por mi
 
  ### 1 - Github Explores
  - [x] Introdução sobre estrutura de pastas e módulos do react;
- - [x] Instalando e configurando Babel
+ - [x] Configurando Babel
+ - [x] Configurando o Webpack
