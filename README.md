@@ -24,3 +24,7 @@ Esse repositório trás todas as atividades práticas realizadas no curso por mi
 -  [x] Entendendo a reexecução do componente quando um state ou uma propriedade do componente muda.
 -  [x] Typescript: instalação, configuração no babel loader e webpack, e tipagem na prática.
 - [x] Utilizando React Developer Tools
+
+## Capter II
+
+-  [x] 
