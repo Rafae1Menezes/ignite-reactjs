@@ -23,8 +23,31 @@ Esse repositório trás todas as atividades práticas realizadas no curso por mi
 -  [x] Utilizando useEffect para fazer um fetch na API do GitHub para popular a lista
 -  [x] Entendendo a reexecução do componente quando um state ou uma propriedade do componente muda.
 -  [x] Typescript: instalação, configuração no babel loader e webpack, e tipagem na prática.
-- [x] Utilizando React Developer Tools
+-  [x] Utilizando React Developer Tools
 
 ## Capter II
 
--  [x] 
+-  [x] Estrutura de uma CRA (Create React-App) de Typescript
+-  [x] Exportando assests do Figma
+-  [x] Usando Styled Components e estilos globais
+-  [x] Criação de componetes em Typescript
+-  [x] Usando Interfaces e types
+-  [x] Configuração do MirageJs para simular um BackEnd
+-  [x] Conigurando a Api com Axios
+-  [x] Utilizando React-modal
+-  [x] Estilização do formulário com Styled Components
+-  [x] Salvando os dados com MirageJS 
+-  [x] Formatação de valores do tipo moeda
+-  [x] Utilizando Context API para evitar drop props
+-  [x] Criação de um Hook para fornecer o contexto criado
+
+## Capter III
+
+-  [x] Fluxo de um SPA (Single Page Aplication)
+-  [x] FLuxo de um SSR (Server Side Rende)
+-  [x] Next: fundamentos, instalação configuração inicial
+-  [x] Trabalhando com Typescript no Next
+-  [x] Trbalhando com CSS Modules (SASS)
+-  [x] Usando o Google Fonts no Next
+-  [x] Componente Heander para páginas que precisam de tags specíficas no cabeçalho.
+-  [x]  Estilos Globais.
