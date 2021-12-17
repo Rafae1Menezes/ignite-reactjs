@@ -36,13 +36,14 @@ Esse repositório trás todas as atividades práticas realizadas no curso por mi
 -  [x] Conigurando a Api com Axios
 -  [x] Utilizando React-modal
 -  [x] Estilização do formulário com Styled Components
--  [x] Salvando os dados com MirageJS 
+-  [x] Salvando os dados com MirageJS
 -  [x] Formatação de valores do tipo moeda
 -  [x] Utilizando Context API para evitar drop props
 -  [x] Criação de um Hook para fornecer o contexto criado
 
 ## Capter III
 
+### Fundamentos do Next.js
 -  [x] Fluxo de um SPA (Single Page Aplication)
 -  [x] FLuxo de um SSR (Server Side Rende)
 -  [x] Next: fundamentos, instalação configuração inicial
@@ -50,4 +51,10 @@ Esse repositório trás todas as atividades práticas realizadas no curso por mi
 -  [x] Trbalhando com CSS Modules (SASS)
 -  [x] Usando o Google Fonts no Next
 -  [x] Componente Heander para páginas que precisam de tags specíficas no cabeçalho.
--  [x]  Estilos Globais.
+-  [x] Estilos Globais.
+-  [x] Configuraçõ do Stripe
+-  [x] Consumindo API do Stripe
+-  [x] Diferenças entre SSR, SSG e Client Side
+
+### Back-end no Front-end
+-  [x] 
