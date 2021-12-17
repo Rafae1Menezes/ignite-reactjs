@@ -57,4 +57,4 @@ Esse repositório trás todas as atividades práticas realizadas no curso por mi
 -  [x] Diferenças entre SSR, SSG e Client Side
 
 ### Back-end no Front-end
--  [x] 
+-  [x] Usando API routes do Next.js
