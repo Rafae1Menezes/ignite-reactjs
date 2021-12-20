@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "stripe-login": "stripe-cli/stripe.exe login",
+    "stripe": "stripe-cli/stripe.exe listen  --forward-to localhost:3000/api/webhook"
   },
   "dependencies": {
     "@stripe/stripe-js": "^1.22.0",
