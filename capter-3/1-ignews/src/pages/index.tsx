@@ -1,4 +1,5 @@
 import { GetStaticProps } from 'next'
+import Head from 'next/head'
 import Image from 'next/image'
 import { SubscribeButton } from '../components/SubscribeButton'
 import { stripe } from '../services/stripe'
@@ -13,9 +14,11 @@ interface HomeProps {
 
 export default function Home({ product }: HomeProps) {
    return (
-      <>         
-         <title>Home | ig.news</title>
-
+      <>  
+         <Head>      
+            <title>Home | ig.news</title>
+         </Head> 
+         
          <main className={styles.contentContainer}>
             <section className={styles.hero}>
                <span>👏 Hey, welcome</span>
@@ -55,3 +58,4 @@ export const getStaticProps: GetStaticProps = async () => {
       revalidate: 60 * 60 * 24, // 24 hours
    }
 }
+

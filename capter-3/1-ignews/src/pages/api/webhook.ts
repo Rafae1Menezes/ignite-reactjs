@@ -56,7 +56,8 @@ const webhooks = async (req: NextApiRequest, res: NextApiResponse) => {
                      subscription.id,
                      subscription.customer.toString(),
                      type === 'customer.subscription.created'
-                  )
+                  )                  
+                  break;
 
                case 'checkout.session.completed':
                   const checkoutSession = event.data.object as Stripe.Checkout.Session
@@ -65,8 +66,8 @@ const webhooks = async (req: NextApiRequest, res: NextApiResponse) => {
                      checkoutSession.customer.toString(),
                      true
                   )
+                  break;
 
-                  break
                default:
                   throw new Error('Unhandle event.')
             }
