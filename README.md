@@ -58,3 +58,15 @@ Esse repositório trás todas as atividades práticas realizadas no curso por mi
 
 ### Back-end no Front-end
 -  [x] Usando API routes do Next.js
+-  [x] Integrando Next Auth e provider do Github
+-  [x] Cadastrando usuários logados no FaunaDB
+-  [x] Configuranção de pagamento com Stripe
+-  [x] Evitando duplicação no stripe
+-  [x] Ouvindo eventos do webhooks do stripe e alterando o banco de dados.
+
+### Front-end JAMStack
+-  [x] 
+-  [x] 
+-  [x] 
+-  [x] 
+-  [x] 
