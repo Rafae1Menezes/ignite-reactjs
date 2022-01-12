@@ -69,3 +69,7 @@ Esse repositório trás todas as atividades práticas realizadas no curso por mi
 -  [x] CoNsumindo API do Prismic;
 -  [x] Validando as assinaturas ativas;
 -  [x] Gerando preview státicos das páginas de previsualização.
+
+## Capter IV
+-  [x] Chakra.ui
+-  [x] Apexcharts
