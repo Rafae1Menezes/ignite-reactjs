@@ -9,7 +9,6 @@ const Chart = dynamic(() => import('react-apexcharts'), {
    ssr: false
 })
 
-
 const options: ApexOptions = {
    chart: {
       toolbar: {
@@ -70,7 +69,7 @@ export default function Dashboard(){
 
             <SimpleGrid flex={1} gap={4} minChildWidth="320px" align="flex-start">
                <Box
-                  p={8}
+                  p={["6", "8"]}
                   bgColor='gray.800'
                   pb={4}
                >
@@ -78,7 +77,7 @@ export default function Dashboard(){
                   <Chart options={options} series={series} type="area" height={168} /> 
                </Box>
                <Box
-                  p={8}
+                  p={["6", "8"]}
                   bgColor='gray.800'
                   //pb={4}
                >
