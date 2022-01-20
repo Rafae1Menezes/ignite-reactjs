@@ -14,6 +14,7 @@ import {
    Tr,
    useBreakpointValue,
 } from '@chakra-ui/react'
+import Link from 'next/link'
 import { RiAddLine, RiPencilLine } from 'react-icons/ri'
 import { Header } from '../../components/Header'
 import { Pagination } from '../../components/Pagination'
@@ -38,15 +39,17 @@ export default function UserList() {
                      Usuários
                   </Heading>
 
-                  <Button
-                     as="a"
-                     size="sm"
-                     fontSize="sm"
-                     colorScheme="pink"
-                     leftIcon={<Icon fontSize={16} as={RiAddLine} />}
-                  >
-                     Criar novo
-                  </Button>
+                  <Link href="/users/create" passHref>
+                     <Button
+                        as="a"
+                        size="sm"
+                        fontSize="sm"
+                        colorScheme="pink"
+                        leftIcon={<Icon fontSize={16} as={RiAddLine} />}
+                     >
+                        Criar novo
+                     </Button>
+                  </Link>
                </Flex>
 
                <Table colorScheme="whiteAlpha">
@@ -75,17 +78,19 @@ export default function UserList() {
                         </Td>
                         {isWideVersion && <Td>04 de Abril, 2021</Td>}
                         <Td>
-                           {isWideVersion && <Button
-                              as="a"
-                              size="sm"
-                              fontSize="sm"
-                              colorScheme="purple"
-                              leftIcon={
-                                 <Icon fontSize={16} as={RiPencilLine} />
-                              }
-                           >
-                              Criar novo
-                           </Button>}
+                           {isWideVersion && (
+                              <Button
+                                 as="a"
+                                 size="sm"
+                                 fontSize="sm"
+                                 colorScheme="purple"
+                                 leftIcon={
+                                    <Icon fontSize={16} as={RiPencilLine} />
+                                 }
+                              >
+                                 Editar
+                              </Button>
+                           )}
                         </Td>
                      </Tr>
                   </Tbody>
