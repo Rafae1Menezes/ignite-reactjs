@@ -5,6 +5,7 @@ import {
    Flex,
    Heading,
    Icon,
+   Link,
    Spinner,
    Table,
    Tbody,
@@ -15,44 +16,37 @@ import {
    Tr,
    useBreakpointValue,
 } from '@chakra-ui/react'
-import Link from 'next/link'
-import { useEffect } from 'react'
+import LinkNext from 'next/link'
+import { useEffect, useState } from 'react'
 import { RiAddLine, RiPencilLine } from 'react-icons/ri'
-import { useQuery } from 'react-query'
+import { QueryClient, useQuery } from 'react-query'
 import { Header } from '../../components/Header'
 import { Pagination } from '../../components/Pagination'
 import { Sidebar } from '../../components/Sidebar'
 import { api } from '../../services/api'
+import { useUsers } from '../../services/hooks/useUsers'
+import { queryClient } from '../../services/queryClient'
+
+
 
 export default function UserList() {
-   const { data, isLoading, isFetching, error } = useQuery('users', async () => {
-      const { data } = await api.get('users')
-
-      const users = data.users.map( user => {
-         return {
-            id: user.id,
-            name: user.name,
-            email: user.email,
-            createdAt: new Date(user.createdAt).toLocaleDateString(
-               'pt-BR', {
-                  day: '2-digit',
-                  month: 'long',
-                  year: 'numeric'
-               }
-            )
-         }
-      })
-
-      return users
-   }, {
-      staleTime:1000 * 5 //
-   })
+   const [page, setPage] = useState(1)
+   const { data, isLoading, isFetching, error } = useUsers(page)
 
    const isWideVersion = useBreakpointValue({
       base: false,
       lg: true,
    })
 
+   async function handlePrefetchUser(userId: string){
+      await queryClient.prefetchQuery(['user', userId], async () => {
+         const respose = await api.get(`users/${userId}`)
+
+         return respose.data
+      }, {
+         staleTime: 1000 * 60 * 10 // 10 minutos
+      })
+   }
 
    return (
       <Box>
@@ -70,7 +64,7 @@ export default function UserList() {
                      }
                   </Heading>
 
-                  <Link href="/users/create" passHref>
+                  <LinkNext href="/users/create" passHref>
                      <Button
                         as="a"
                         size="sm"
@@ -80,7 +74,7 @@ export default function UserList() {
                      >
                         Criar novo
                      </Button>
-                  </Link>
+                  </LinkNext>
                </Flex>
 
                {
@@ -103,14 +97,18 @@ export default function UserList() {
                               </Thead>
                               <Tbody>
                                  {
-                                    data.map(user => (
+                                    data.users.map(user => (
                                        <Tr key={user.id}>
                                           <Td px={['4', '4', '6']}>
                                              <Checkbox colorScheme="pink" />
                                           </Td>
                                           <Td>
                                              <Box>
-                                                <Text fontWeight="bold">{user.name}</Text>
+                                                <Link color="purple.400" onMouseEnter={()=>handlePrefetchUser(user.id)}>
+                                                   <Text fontWeight="bold">
+                                                      {user.name}
+                                                   </Text>
+                                                </Link>
                                                 <Text fontSize="small" color="gray.300">
                                                    {user.email}
                                                 </Text>
@@ -133,12 +131,17 @@ export default function UserList() {
                                              )}
                                           </Td>
                                        </Tr>
-   ))
+                                    ))
                                  }
 
                               </Tbody>
                            </Table>
-                           <Pagination />
+                           <Pagination 
+                              totalCountofRegisters={data.totalCount}
+                              onPageChange={setPage}
+                              currentPage={page}
+                              resgitersPerPage={10}
+                           />
                         </>
                }
             </Box>
