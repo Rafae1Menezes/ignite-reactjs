@@ -47,11 +47,10 @@ export function AuthProvider({ children }: AuthProviderProps) {
 
             switch(message.data) {
                 case 'signOut': 
-                    signOut()
-                    authChannel.close();
+                    Router.push('/')
                     break
                 case 'signIn':
-                    Router.push('/dashboard')
+                    Router.push('/dashboard', undefined, { shallow: true })
                 default:
                     break
             }
