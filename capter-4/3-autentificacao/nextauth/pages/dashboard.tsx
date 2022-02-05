@@ -1,22 +1,36 @@
-import { parseCookies } from "nookies"
 import { useContext, useEffect } from "react"
+import { Can } from "../components/Can"
 import { AuthContext } from "../contexts/AuthContext"
-import { api } from "../services/api"
+import { setupApiClient } from "../services/api"
+import { api } from "../services/apiClient"
+import { withSSRAuth } from "../utils/withSSRAuth"
 
 
-export default function Dashboard(){
-    const { user } = useContext(AuthContext)
+export default function Dashboard() {
+    const { user, signOut } = useContext(AuthContext)
 
+   
 
-    useEffect(()=>{
-        api.get('/me')
-            .then(res => console.log(res))
-            .catch(err => console.log(err))
-    },[])
-
-    return(
+    return (
         <>
             DashBoard: {user.email}
+            <br></br>
+            <button onClick={signOut}>Sign out</button>
+
+            <Can roles={["administrator"]}>
+                <div>Métricas</div>
+            </Can>
+
         </>
     )
 }
+
+export const getServerSideProps = withSSRAuth(async (ctx) => {
+    const apiClient = setupApiClient(ctx)
+
+    const response = await apiClient.get('/me')
+
+    return {
+        props: {}
+    }
+})
