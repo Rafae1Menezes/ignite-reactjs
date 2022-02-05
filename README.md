@@ -1,4 +1,4 @@
-# Curso React.JS - Ignite -Rocketseat
+    # Curso React.JS - Ignite -Rocketseat
 
 Esse repositório trás todas as atividades práticas realizadas no curso por mim.
 
@@ -73,3 +73,7 @@ Esse repositório trás todas as atividades práticas realizadas no curso por mi
 ## Capter IV
 -  [x] Chakra.ui
 -  [x] Apexcharts
+-  [x] ...
+-  [x] Data fetching e cache local
+-  [x] ...
+-  [x] Autenticação e eutorização
