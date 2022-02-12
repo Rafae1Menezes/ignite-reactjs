@@ -24,9 +24,8 @@ export default function Posts({ posts }: PostsProps) {
   const { data: session } = useSession()
 
   //const showPreview = (session.activeSubscription?.data.status != 'active')
-
-  console.log(session?.activeSubscription)
-  const showPreview = true
+  let showPreview = true
+  if(session) if(session.activeSubscription.data.status === 'active') showPreview = false
 
   return (
     <>
