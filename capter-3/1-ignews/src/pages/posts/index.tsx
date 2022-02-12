@@ -25,7 +25,7 @@ export default function Posts({ posts }: PostsProps) {
 
   //const showPreview = (session.activeSubscription?.data.status != 'active')
 
-  console.log(session.activeSubscription)
+  console.log(session?.activeSubscription)
   const showPreview = true
 
   return (
