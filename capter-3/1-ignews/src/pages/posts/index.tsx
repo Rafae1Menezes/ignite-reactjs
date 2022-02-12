@@ -23,9 +23,9 @@ interface PostsProps {
 export default function Posts({ posts }: PostsProps) {
   const { data: session } = useSession()
 
-  const showPreview = (session?.activeSubscription.data.status != 'active')
+  const showPreview = (session?.activeSubscription?.data.status != 'active')
 
-  console.log(session?.activeSubscription.data.status)
+  console.log(session?.activeSubscription?.data.status)
 
   return (
     <>
