@@ -23,7 +23,9 @@ interface PostsProps {
 export default function Posts({ posts }: PostsProps) {
   const { data: session } = useSession()
 
-  console.log(session)
+  const showPreview = (session.activeSubscription.data.status != 'active')
+
+  console.log(session.activeSubscription.data.status)
 
   return (
     <>
@@ -35,7 +37,7 @@ export default function Posts({ posts }: PostsProps) {
         <div className={styles.posts}>
           {
             posts.map(post => (
-              <Link key={post.slug} href={`/posts/${session&&'preview/'}${post.slug}`}>
+              <Link key={post.slug} href={`/posts/${showPreview&&'preview/'}${post.slug}`}>
                 <a>
                   <time>{post.updatedAt}</time>
                   <strong>{post.title}</strong>
