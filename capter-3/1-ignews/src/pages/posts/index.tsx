@@ -1,3 +1,4 @@
+import { useSession } from 'next-auth/react'
 import { GetStaticProps } from 'next'
 import Head from 'next/head'
 import { getPrismicClient } from '../../services/prismic'
@@ -21,6 +22,8 @@ interface PostsProps {
 
 export default function Posts({ posts }: PostsProps) {
   const { data: session } = useSession()
+
+  console.log(session)
 
   return (
     <>
