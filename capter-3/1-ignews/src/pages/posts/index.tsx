@@ -23,7 +23,7 @@ interface PostsProps {
 export default function Posts({ posts }: PostsProps) {
   const { data: session } = useSession()
 
-  let showPreview = (session) ? '' : 'preview/'
+  let showPreview = (session?.activeSubscription) ? '' : 'preview/'
 
   return (
     <>
