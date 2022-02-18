@@ -1,10 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/router";
 import { ActiveLInk } from "../ActiveLink";
 import { SignInButton } from "../SignInButton";
+import styles from './styles.module.scss';
 
-import styles from './styles.module.scss'
 
 export function Header() {
    
